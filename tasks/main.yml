@@ -1,0 +1,32 @@
+- name: modify apt-key
+  apt_key: 
+    url: "http://dl.hhvm.com/conf/hhvm.gpg.key"
+
+- name: modify repository
+  apt_repository:
+    repo: "deb http://dl.hhvm.com/ubuntu trusty main"
+
+- name: install
+  apt:
+    name: "{{ item }}"
+    state: present
+    force: yes
+  with_items:
+    - "hhvm={{ version }}*"
+
+- name: modify config
+  template:
+    src: "{{ item }}"
+    dest: "/etc/hhvm/{{ item }}"
+    owner: root
+    group: root
+    mode: 0664
+  with_items:
+    - server.ini
+    - php.ini
+
+- name: hhvm is enabled
+  service:
+    name: hhvm
+    state: started
+    enabled: yes

@@ -1,0 +1,23 @@
+version: "3.9.1"
+
+pidfile: "/var/run/hhvm/pid"
+
+server:
+  port: "9000"
+  type: "fastcgi"
+  default_document: "index.php"
+
+log:
+  use_log_file: "true"
+  file: "/var/log/hhvm/error.log"
+  level: "Warning"
+  always_log_unhandled_exceptions: "true"
+  runtime_error_reporting_level: 8191
+
+session:
+  save_handler: "files"
+  save_path: "/var/lib/hhvm/sessions"
+  gc_maxlifetime: 1440
+
+mysql:
+  typed_results: "false"
