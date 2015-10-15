@@ -13,6 +13,7 @@
     force: yes
   with_items:
     - "hhvm={{ version }}*"
+  notify: restart hhvm
 
 - name: modify config
   template:
@@ -24,6 +25,7 @@
   with_items:
     - server.ini
     - php.ini
+  notify: restart hhvm
 
 - name: hhvm is enabled
   service:
