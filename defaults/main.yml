@@ -1,5 +1,9 @@
 hhvm_version: ""
 
+# /etc/default/hhvm
+hhvm_run_user: nginx
+hhvm_run_group: nginx
+
 # server.ini
 hhvm_pidfile: /var/run/hhvm/pid
 
