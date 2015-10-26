@@ -8,11 +8,9 @@
 
 - name: install
   apt:
-    name: "{{ item }}"
+    name: "hhvm={{ hhvm_version }}*"
     state: present
     force: yes
-  with_items:
-    - "hhvm={{ version }}*"
   notify: restart hhvm
 
 - name: modify config

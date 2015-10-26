@@ -1,23 +1,22 @@
-version: ""
+hhvm_version: ""
 
-pidfile: "/var/run/hhvm/pid"
+# server.ini
+hhvm_pidfile: /var/run/hhvm/pid
 
-server:
-  port: "9000"
-  type: "fastcgi"
-  default_document: "index.php"
+hhvm_server_user: nginx
+hhvm_server_port: 9000
+hhvm_server_type: fastcgi
+hhvm_server_default_document: index.php
+hhvm_log_use_log_file: "true"
+hhvm_log_file: /var/log/hhvm/error.log
+hhvm_repo_central_path: /var/run/hhvm/hhvm.hhbc
 
-log:
-  use_log_file: "true"
-  file: "/var/log/hhvm/error.log"
-  level: "Warning"
-  always_log_unhandled_exceptions: "true"
-  runtime_error_reporting_level: 8191
+# php.ini
+session_save_handler: files
+session_save_path: /var/lib/hhvm/sessions
+session_gc_maxlifetime: 1440
 
-session:
-  save_handler: "files"
-  save_path: "/var/lib/hhvm/sessions"
-  gc_maxlifetime: 1440
-
-mysql:
-  typed_results: "false"
+hhvm_log_level: Warning
+hhvm_log_always_log_unhandled_exceptions: "true"
+hhvm_log_runtime_error_reporting_level: 8191
+hhvm_mysql_typed_results: "false"
