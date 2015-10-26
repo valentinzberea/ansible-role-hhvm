@@ -3,7 +3,6 @@ hhvm_version: ""
 # server.ini
 hhvm_pidfile: /var/run/hhvm/pid
 
-hhvm_server_user: nginx
 hhvm_server_port: 9000
 hhvm_server_type: fastcgi
 hhvm_server_default_document: index.php
