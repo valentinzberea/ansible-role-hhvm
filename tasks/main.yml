@@ -13,15 +13,6 @@
     force: yes
   notify: restart hhvm
 
-- name: modify sysconfig
-  template:
-    src: sysconfig
-    dest: /etc/default/hhvm
-    owner: root
-    group: root
-    mode: 0644
-  notify: restart hhvm
-
 - name: modify config
   template:
     src: "{{ item }}"
