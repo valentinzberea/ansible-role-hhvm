@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: mats116
   description: "HHVM installer (for WordPress)"
@@ -12,3 +13,4 @@ galaxy_info:
     - web
     - hhvm
     - php
+dependencies: []
