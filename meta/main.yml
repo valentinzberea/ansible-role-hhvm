@@ -9,7 +9,6 @@ galaxy_info:
       versions:
         - trusty
   galaxy_tags:
+    - web
     - hhvm
-    - installer
-
-dependencies:
+    - php
