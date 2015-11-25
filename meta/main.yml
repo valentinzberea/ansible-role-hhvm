@@ -1,7 +1,7 @@
 galaxy_info:
   author: mats116
-  description: HHVM installer (for WordPress)
-  company: freee K.K.
+  description: "HHVM installer (for WordPress)"
+  company: "freee K.K."
   license: MIT
   min_ansible_version: 1.9
   platforms:
