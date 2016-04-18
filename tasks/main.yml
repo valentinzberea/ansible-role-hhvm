@@ -25,6 +25,9 @@
     - php.ini
   notify: restart hhvm
 
+- name: ensure locale are present
+  locale_gen: name=en_US.UTF-8 state=present
+
 - name: hhvm is enabled
   service:
     name: hhvm
