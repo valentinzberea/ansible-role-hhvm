@@ -8,8 +8,8 @@
 
 - name: install
   apt:
-    name: "hhvm={{ hhvm_version }}*"
-    state: present
+    name: hhvm
+    state: latest
     force: yes
   notify: restart hhvm
 
